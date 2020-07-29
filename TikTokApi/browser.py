@@ -12,7 +12,7 @@ import logging
 from .stealth import stealth
 
 class browser:
-    def __init__(self, url, language='en', proxy=None, find_redirect=False, api_url=None, debug=False):
+    def __init__(self, url, language='en', proxy=None, find_redirect=False, api_url=None, debug=True):
         self.url = url
         self.debug = debug
         self.proxy = proxy
