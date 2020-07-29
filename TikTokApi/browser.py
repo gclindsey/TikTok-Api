@@ -28,7 +28,12 @@ class browser:
             "--window-position=0,0",
             "--ignore-certifcate-errors",
             "--ignore-certifcate-errors-spki-list",
-             "--user-agent=" + self.userAgent
+            "--user-agent=" + self.userAgent,
+            '--single-process',
+            '--disable-dev-shm-usage',
+            '--disable-gpu',
+            '--no-zygote'
+
         ]
 
         #self.args = []
