@@ -22,17 +22,17 @@ class browser:
 
         self.userAgent = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/83.0.4103.0 Safari/537.36)"
         self.args = [
-            "--no-sandbox",
+            "--no-sandbox", # Lambda
             "--disable-setuid-sandbox",
             "--disable-infobars",
             "--window-position=0,0",
             "--ignore-certifcate-errors",
             "--ignore-certifcate-errors-spki-list",
             "--user-agent=" + self.userAgent,
-            '--single-process',
-            '--disable-dev-shm-usage',
-            '--disable-gpu',
-            '--no-zygote'
+            '--single-process', # Lambda
+            '--disable-dev-shm-usage', # Lambda
+            '--disable-gpu', # Lambda
+            '--no-zygote' # Lambda
 
         ]
 
@@ -52,7 +52,8 @@ class browser:
             'userDataDir': "./tmp",
             'handleSIGINT': False,
             'handleSIGTERM': False,
-            'handleSIGHUP': False
+            'handleSIGHUP': False,
+            'executablePath': '/opt/headless-chromium' # For running on AWS Lambda
         }
 
         loop = asyncio.new_event_loop()
